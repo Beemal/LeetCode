@@ -64,15 +64,21 @@ class Interval{
     	ArrayList <Interval> Re=insert(A, B);
     	for(int i=0;i<Re.size();i++)
     	{
-    		System.out.println("["+ Re.get(i).start+","+Re.get(i).end+"]");
+    		System.out.println(Re.get(i));
     	}
     	
     }
 
+	@Override
+	public String toString() {
+		return "Interval [start=" + start + ", end=" + end + "]";
+	}
+
 }
 
 /*
-[1,3]
-[4,10]
-[11,14]
+Interval [start=1, end=3]
+Interval [start=4, end=10]
+Interval [start=11, end=14]
+
 */
