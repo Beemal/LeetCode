@@ -57,3 +57,8 @@ public class GetClosestBigger{
 		return x;
 	}
 }
+
+/*
+next to integer 
+33458
+*/
