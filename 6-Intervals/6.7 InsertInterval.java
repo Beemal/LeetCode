@@ -8,6 +8,24 @@ class Interval{
         end=b;
     }
     
+    
+    public static void main(String[] args)
+    {
+    	
+    	Interval a=new Interval (1,3);
+    	Interval b=new Interval (6,10);
+    	Interval c=new Interval (11,14);
+    	Interval []  A={a,b,c};
+    	Interval B=new Interval (3,11);
+    	ArrayList <Interval> Re=insert(A, B);
+    	System.out.println("after merging,the left intervals are:");
+    	for(int i=0;i<Re.size();i++)
+    	{
+    		System.out.println(Re.get(i));
+    	}
+    	
+    }
+    
     //实现合并新旧区间功能的函数
     static ArrayList <Interval> insert (Interval [] intervals, Interval newInt)
     {
@@ -24,7 +42,7 @@ class Interval{
     	int i=0;
     	int n=intervals.length;//数组.length统计数组长度
     	
-    	//新区间的起点大于前面的几个原有区间的终点
+    	//如果新区间的起点大于前面的几个原有区间的终点
     	while(i<n&&newInt.start>intervals[i].end)
  
     	{
@@ -32,7 +50,7 @@ class Interval{
     		i++;
     	}
     	
-    	//存在重叠的区间，即越过了前面的几个小区间后，新区间的终点大于后面这个区间的起点，有重叠部分了
+    	//如果存在重叠的区间，即越过了前面的几个小区间后，新区间的终点大于后面这个区间的起点，有重叠部分了
     	while(i<n&&newInt.end>=intervals[i].start)
     	{
     		
@@ -40,6 +58,7 @@ class Interval{
     		newInt.start=Math.min(newInt.start,intervals[i].start);//取较小值为起点
     		i++;
     	}
+    	
     	//加上合并后的新区间
     	res.add(newInt);
     	
@@ -53,21 +72,7 @@ class Interval{
         return res;
     }
     
-    public static void main(String[] args)
-    {
-    	
-    	Interval a=new Interval (1,3);
-    	Interval b=new Interval (6,10);
-    	Interval c=new Interval (11,14);
-    	Interval []  A={a,b,c};
-    	Interval B=new Interval (4,6);
-    	ArrayList <Interval> Re=insert(A, B);
-    	for(int i=0;i<Re.size();i++)
-    	{
-    		System.out.println(Re.get(i));
-    	}
-    	
-    }
+  
 
 	@Override
 	public String toString() {
@@ -77,8 +82,6 @@ class Interval{
 }
 
 /*
-Interval [start=1, end=3]
-Interval [start=4, end=10]
-Interval [start=11, end=14]
-
+after merging,the left intervals are:
+Interval [start=1, end=14]
 */
