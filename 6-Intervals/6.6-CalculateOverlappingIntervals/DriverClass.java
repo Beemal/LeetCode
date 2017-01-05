@@ -1,3 +1,4 @@
+package testProject;
 
 public class DriverClass {
 
@@ -8,7 +9,8 @@ public class DriverClass {
 	        Interval c=new Interval (3,14);
 	        Interval []  A={a,b,c};
 	        int re=Point.getOverlappingCount(A);
-	        System.out.print(re);
+	        System.out.println();
+	        System.out.print("over lapping number is :"+re);
 	   }
 }
 /*
@@ -19,4 +21,6 @@ Point [value=3, type=1]
 Point [value=3, type=0]
 Point [value=10, type=1]
 Point [value=14, type=1]
+
+over lapping number is :3
 */
