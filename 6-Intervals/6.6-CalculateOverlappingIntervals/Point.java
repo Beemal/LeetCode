@@ -1,3 +1,4 @@
+package testProject;
 
 import java.util.*;
 
@@ -25,7 +26,7 @@ class Point implements Comparable <Point>//implements就是接口咯？
         }
     }
 
-   static public int getOverlappingCount(Interval [] A)
+    public static  int getOverlappingCount(Interval [] A)
     {
 
         int loap=0, count=0;
@@ -83,4 +84,3 @@ class Point implements Comparable <Point>//implements就是接口咯？
    }
    
 }
-
